@@ -1,0 +1,222 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+    font-family: 'Futura', 'Futura PT', 'Century Gothic', 'AppleGothic', sans-serif;
+    color: #fff;
+    overflow-x: hidden;
+}
+
+/* Video Background */
+.video-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    overflow: hidden;
+}
+
+#bg-video {
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    object-fit: cover;
+}
+
+.video-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(20, 25, 20, 0.6);
+}
+
+/* Main Content */
+.content {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 40px 20px;
+    text-align: center;
+}
+
+/* Header */
+header {
+    margin-bottom: 50px;
+    text-align: center;
+}
+
+.logo {
+    height: 140px;
+    width: auto;
+}
+
+/* Main */
+main {
+    flex: 1;
+}
+
+/* Introduction */
+.intro {
+    margin-bottom: 50px;
+    max-width: 700px;
+}
+
+.intro p {
+    font-size: 1.4rem;
+    line-height: 1.9;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.intro strong {
+    color: #fff;
+    font-weight: 700;
+}
+
+/* Roadmap */
+.roadmap {
+    width: 100%;
+    max-width: 700px;
+}
+
+.roadmap-title {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: rgba(255, 255, 255, 0.9);
+    margin-bottom: 25px;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+}
+
+.roadmap-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+
+.progress-item {
+    width: 100%;
+}
+
+.progress-bar {
+    position: relative;
+    height: 50px;
+    background: rgba(255, 255, 255, 0.15);
+    border-radius: 6px;
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.progress-fill {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    background: linear-gradient(90deg,
+        #2d5a3d 0%,
+        #3d7a4f 25%,
+        #5a9a6a 50%,
+        #7bc47f 75%,
+        #a8e6a3 100%);
+    width: 0;
+    transition: width 1.2s cubic-bezier(0.4, 0, 0.2, 1);
+    border-radius: 5px 0 0 5px;
+    box-shadow: 0 2px 8px rgba(45, 90, 61, 0.3);
+}
+
+.progress-bar[data-progress="100"] .progress-fill {
+    border-radius: 5px;
+}
+
+.progress-label {
+    position: absolute;
+    left: 16px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #fff;
+    z-index: 1;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.7);
+    letter-spacing: 0.02em;
+}
+
+/* Footer */
+footer {
+    margin-top: 80px;
+    padding: 20px 0;
+    text-align: center;
+}
+
+footer p {
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 0.9rem;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .content {
+        padding: 30px 20px;
+    }
+
+    .logo {
+        height: 110px;
+    }
+
+    .intro p {
+        font-size: 1.1rem;
+    }
+
+    .roadmap-grid {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+
+    .progress-bar {
+        height: 45px;
+    }
+
+    .progress-label {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .content {
+        padding: 20px 15px;
+    }
+
+    .logo {
+        height: 90px;
+    }
+
+    header {
+        margin-bottom: 30px;
+    }
+
+    .intro {
+        margin-bottom: 30px;
+    }
+
+    .intro p {
+        font-size: 1rem;
+    }
+
+    footer {
+        margin-top: 50px;
+    }
+}
