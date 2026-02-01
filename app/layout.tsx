@@ -1,11 +1,11 @@
 import type { Metadata } from "next";
 import { Analytics } from "@vercel/analytics/react";
-import { Inter } from "next/font/google";
+import { Titillium_Web } from "next/font/google";
 import "./globals.css";
 
-const inter = Inter({
+const titillium = Titillium_Web({
   subsets: ["latin"],
-  weight: ["300", "400", "500", "600", "700"],
+  weight: ["200", "300", "400", "600", "700"],
 });
 
 export const metadata: Metadata = {
@@ -29,7 +29,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${inter.className} antialiased`}>
+      <body className={`${titillium.className} antialiased`}>
         {children}
         <Analytics />
       </body>

@@ -22,7 +22,29 @@ body {
   background-color: var(--vf-dark);
   color: #fff;
   line-height: 1.7;
-  font-weight: 300;
+  font-weight: 200;
+  font-size: 1.2rem;
+}
+
+/* Boost text sizes by 20% */
+.lead {
+  font-size: 1.5rem;
+}
+
+p {
+  font-size: 1.2rem;
+}
+
+.small, small {
+  font-size: 1rem;
+}
+
+.h4, h4 {
+  font-size: 1.5rem;
+}
+
+.h5, h5 {
+  font-size: 1.25rem;
 }
 
 /* Override Bootstrap dark theme */
