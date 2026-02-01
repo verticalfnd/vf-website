@@ -232,7 +232,7 @@ const ChainOfCustodySVG = () => (
 );
 
 const TransactionAsSignatureSVG = () => (
-  <svg viewBox="0 0 800 200" className="workflow-svg" style={{ width: '100%', height: 'auto' }}>
+  <svg viewBox="0 0 800 280" className="workflow-svg" style={{ width: '100%', height: 'auto' }}>
     <defs>
       <linearGradient id="greenGradient2" x1="0%" y1="0%" x2="100%" y2="0%">
         <stop offset="0%" stopColor="#7bc47f" stopOpacity="0.2"/>
@@ -244,31 +244,41 @@ const TransactionAsSignatureSVG = () => (
     </defs>
 
     {/* Step 1 - Fund */}
-    <rect x="20" y="40" width="200" height="120" rx="12" fill="url(#greenGradient2)" stroke="#7bc47f" strokeWidth="1"/>
-    <text x="120" y="70" textAnchor="middle" fill="#a8e6a3" fontSize="18" fontWeight="600">FUND</text>
-    <text x="120" y="95" textAnchor="middle" fill="rgba(255,255,255,0.7)" fontSize="11">Paying party funds their</text>
-    <text x="120" y="113" textAnchor="middle" fill="rgba(255,255,255,0.7)" fontSize="11">contractual obligation,</text>
-    <text x="120" y="131" textAnchor="middle" fill="rgba(255,255,255,0.7)" fontSize="11">signing by transaction</text>
+    <rect x="20" y="80" width="200" height="120" rx="12" fill="url(#greenGradient2)" stroke="#7bc47f" strokeWidth="1"/>
+    <text x="120" y="110" textAnchor="middle" fill="#a8e6a3" fontSize="18" fontWeight="600">FUND</text>
+    <text x="120" y="135" textAnchor="middle" fill="rgba(255,255,255,0.7)" fontSize="11">Paying party funds their</text>
+    <text x="120" y="153" textAnchor="middle" fill="rgba(255,255,255,0.7)" fontSize="11">contractual obligation,</text>
+    <text x="120" y="171" textAnchor="middle" fill="rgba(255,255,255,0.7)" fontSize="11">signing by transaction</text>
 
     {/* Arrow 1 */}
-    <line x1="230" y1="100" x2="290" y2="100" stroke="#7bc47f" strokeWidth="2" markerEnd="url(#arrowhead2)"/>
+    <line x1="230" y1="140" x2="290" y2="140" stroke="#7bc47f" strokeWidth="2" markerEnd="url(#arrowhead2)"/>
 
     {/* Step 2 - Sign */}
-    <rect x="300" y="40" width="200" height="120" rx="12" fill="url(#greenGradient2)" stroke="#7bc47f" strokeWidth="1"/>
-    <text x="400" y="70" textAnchor="middle" fill="#a8e6a3" fontSize="18" fontWeight="600">SIGN</text>
-    <text x="400" y="95" textAnchor="middle" fill="rgba(255,255,255,0.7)" fontSize="11">Other parties sign in</text>
-    <text x="400" y="113" textAnchor="middle" fill="rgba(255,255,255,0.7)" fontSize="11">parallel—like a multisig,</text>
-    <text x="400" y="131" textAnchor="middle" fill="rgba(255,255,255,0.7)" fontSize="11">but for legal agreements</text>
+    <rect x="300" y="80" width="200" height="120" rx="12" fill="url(#greenGradient2)" stroke="#7bc47f" strokeWidth="1"/>
+    <text x="400" y="110" textAnchor="middle" fill="#a8e6a3" fontSize="18" fontWeight="600">SIGN</text>
+    <text x="400" y="135" textAnchor="middle" fill="rgba(255,255,255,0.7)" fontSize="11">Other parties sign in</text>
+    <text x="400" y="153" textAnchor="middle" fill="rgba(255,255,255,0.7)" fontSize="11">parallel—like a multisig,</text>
+    <text x="400" y="171" textAnchor="middle" fill="rgba(255,255,255,0.7)" fontSize="11">but for legal agreements</text>
 
-    {/* Arrow 2 */}
-    <line x1="510" y1="100" x2="570" y2="100" stroke="#7bc47f" strokeWidth="2" markerEnd="url(#arrowhead2)"/>
+    {/* Arrow to Execute (upper branch) */}
+    <path d="M510 140 L540 140 L540 70 L570 70" stroke="#7bc47f" strokeWidth="2" fill="none" markerEnd="url(#arrowhead2)"/>
 
-    {/* Step 3 - Execute */}
-    <rect x="580" y="40" width="200" height="120" rx="12" fill="url(#greenGradient2)" stroke="#7bc47f" strokeWidth="1"/>
-    <text x="680" y="70" textAnchor="middle" fill="#a8e6a3" fontSize="18" fontWeight="600">EXECUTE</text>
-    <text x="680" y="95" textAnchor="middle" fill="rgba(255,255,255,0.7)" fontSize="11">Contract holds funds in</text>
-    <text x="680" y="113" textAnchor="middle" fill="rgba(255,255,255,0.7)" fontSize="11">escrow, releasing per</text>
-    <text x="680" y="131" textAnchor="middle" fill="rgba(255,255,255,0.7)" fontSize="11">agreed terms</text>
+    {/* Arrow to Document (lower branch) */}
+    <path d="M510 140 L540 140 L540 210 L570 210" stroke="#7bc47f" strokeWidth="2" fill="none" markerEnd="url(#arrowhead2)"/>
+
+    {/* Step 3a - Execute */}
+    <rect x="580" y="10" width="200" height="120" rx="12" fill="url(#greenGradient2)" stroke="#7bc47f" strokeWidth="1"/>
+    <text x="680" y="40" textAnchor="middle" fill="#a8e6a3" fontSize="18" fontWeight="600">EXECUTE</text>
+    <text x="680" y="65" textAnchor="middle" fill="rgba(255,255,255,0.7)" fontSize="11">Contract holds funds in</text>
+    <text x="680" y="83" textAnchor="middle" fill="rgba(255,255,255,0.7)" fontSize="11">escrow, releasing per</text>
+    <text x="680" y="101" textAnchor="middle" fill="rgba(255,255,255,0.7)" fontSize="11">agreed terms</text>
+
+    {/* Step 3b - Document */}
+    <rect x="580" y="150" width="200" height="120" rx="12" fill="url(#greenGradient2)" stroke="#7bc47f" strokeWidth="1"/>
+    <text x="680" y="180" textAnchor="middle" fill="#a8e6a3" fontSize="18" fontWeight="600">DOCUMENT</text>
+    <text x="680" y="205" textAnchor="middle" fill="rgba(255,255,255,0.7)" fontSize="11">HOST triggers AI workflow,</text>
+    <text x="680" y="223" textAnchor="middle" fill="rgba(255,255,255,0.7)" fontSize="11">generating signed PDF with</text>
+    <text x="680" y="241" textAnchor="middle" fill="rgba(255,255,255,0.7)" fontSize="11">all party addresses</text>
   </svg>
 );
 
@@ -696,8 +706,9 @@ export default function Home() {
                 </p>
                 <p className="text-muted-custom">
                   When parties fund the contract, they&apos;re signing the agreement. The transaction
-                  itself is the signature. HOST then generates validator-signed PDF documentation
-                  that serves as court-admissible proof of the agreement and its terms.
+                  itself is the signature. HOST kicks off an AI agentic workflow that generates
+                  PDF documentation with embedded Validator signature and visible EVM addresses
+                  for all signatories that serves as court-admissible proof of the agreement and its terms.
                 </p>
               </div>
             </div>
