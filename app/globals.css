@@ -19,10 +19,10 @@ html {
 }
 
 body {
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   background-color: var(--vf-dark);
   color: #fff;
   line-height: 1.7;
+  font-weight: 300;
 }
 
 /* Override Bootstrap dark theme */
@@ -50,7 +50,7 @@ body {
 }
 
 .workflow-svg text {
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-family: inherit;
 }
 
 /* Icon containers */
